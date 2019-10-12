@@ -50,5 +50,55 @@ pyplot.plot(dataframe['city-mpg'], dataframe['price'], 'ro')
 
 
 #%%
+dataframe.plot(kind = 'scatter', x = 'city-mpg', y = 'price')
+
+
+#%%
+dataframe.plot(kind = 'scatter', x = 'curb-weight',  y = 'price')
+
+
+#%%
+import matplotlib.pyplot as pyplot
+fig = pyplot.figure(figsize=(6,6)) # plot area
+ax = fig.gca() # define axis
+dataframe.plot(kind = 'scatter', x = 'city-mpg', y = 'price', ax = ax)
+ax.set_title('Scatter plot of mpg vs price')
+ax.set_xlabel('City MPG')
+ax.set_ylabel('Auto Price')
+
+
+#%%
+import pandas as pandas
+x = list(range(100))
+y = [z * z for z in range(100)]
+df = pandas.DataFrame({ 'x': x, 'y': y})
+
+
+#%%
+import matplotlib.pyplot as pyplot
+fig = pyplot.figure(figsize=(10,10)) # plot area
+ax = fig.gca() # define axis
+df.plot(x = 'x', y = 'y', ax = ax)
+ax.set_title('Line plot of x^2 vs x')
+ax.set_xlabel('x')
+ax.set_ylabel('x^2')
+
+
+#%%
+counts = dataframe['make'].value_counts()
+counts
+
+
+#%%
+import matplotlib.pyplot as pyplot
+fig = pyplot.figure(figsize=(10,10)) # plot area
+ax = fig.gca() # define axis
+counts.plot.bar(ax = ax)
+ax.set_title('Number of auto types by make')
+ax.set_xlabel('Make')
+ax.set_ylabel('Number of autos')
+
+
+#%%
 
 
